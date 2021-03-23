@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692.9906542056074" y="-441.2526997840173"/>
+            <point key="canvasLocation" x="2713" y="469"/>
         </scene>
         <!--Create Account-->
         <scene sceneID="fZf-h6-bb8">
@@ -414,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1N-Qj-MxY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692.9906542056074" y="485.96112311015122"/>
+            <point key="canvasLocation" x="2712" y="-371"/>
         </scene>
         <!--Terms & Conditions-->
         <scene sceneID="CRB-ja-VHp">
@@ -482,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sil-4o-rpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3522" y="485"/>
+            <point key="canvasLocation" x="3529" y="-372"/>
         </scene>
         <!--Forgot Password-->
         <scene sceneID="whT-PS-6Ug">
@@ -556,7 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmv-r5-Krz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3522" y="-441"/>
+            <point key="canvasLocation" x="3529" y="469"/>
         </scene>
         <!--LoggedIn-->
         <scene sceneID="c5G-AR-qvw">
@@ -729,7 +729,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RUo-4l-eEy"/>
+        <segue reference="lt9-aw-ReL"/>
         <segue reference="C8H-g2-xPE"/>
     </inferredMetricsTieBreakers>
     <resources>

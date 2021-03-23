@@ -44,7 +44,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="ZOR-qW-PIe">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="jVN-h0-Mdv" kind="presentation" modalPresentationStyle="fullScreen" id="mBG-74-3LR"/>
+                                <segue destination="jVN-h0-Mdv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mBG-74-3LR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

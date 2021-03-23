@@ -84,6 +84,9 @@ class ChangePasswordVC: UIViewController {
                     return
                 }
                 AlertService.successfulUpdatedPassword(self)
+                if UserDefaultsManager.shared.isBiometricsSetup() {
+                    Biometrics.saveKeyChainPassword(email: email, password: newPassword)
+                }
             })
         })
     }
@@ -93,7 +96,6 @@ class ChangePasswordVC: UIViewController {
         Auth.auth().sendPasswordReset(withEmail: email, completion: {
             error in
             if error != nil {
-//                print("Error")
                 AlertService.showPopup(title: "Error!", message: "Unable to send reset link.\nTry Again", viewController: self)
                 return
             }
@@ -110,6 +112,9 @@ class ChangePasswordVC: UIViewController {
     
     func setupButtons() {
         Styling.styleFilledButton(updatePasswordButton)
+        Styling.styleTextField(currentPasswordTF)
+        Styling.styleTextField(newPasswordTF)
+        Styling.styleTextField(confirmPasswordTF)
     }
 
 }

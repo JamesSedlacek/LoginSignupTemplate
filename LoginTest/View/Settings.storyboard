@@ -8,6 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--LoggedIn-->
+        <scene sceneID="TC6-85-suj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoggedIn" id="nKA-k6-25o" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhe-Jj-li2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="-221"/>
+        </scene>
         <!--Main-->
         <scene sceneID="j8T-gW-7TB">
             <objects>
@@ -16,7 +24,7 @@
                     <navigationItem key="navigationItem" id="sV8-de-L2k"/>
                 </viewControllerPlaceholder>
             </objects>
-            <point key="canvasLocation" x="2616" y="-298"/>
+            <point key="canvasLocation" x="2600" y="-266"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MDY-Tj-1bs">
@@ -287,6 +295,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Fq6-pN-8eu">
                             <connections>
                                 <action selector="backButtonTapped:" destination="ydx-Yt-lAx" id="6Iv-QO-MXr"/>
+                                <segue destination="nKA-k6-25o" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="L1g-NS-IDX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -295,7 +304,7 @@
                         <outlet property="helpButton" destination="bQI-3j-Dfh" id="WrV-oS-I4W"/>
                         <outlet property="logoutButton" destination="k0A-yC-A5s" id="x0X-K1-EsZ"/>
                         <outlet property="passwordButton" destination="NhU-qJ-fDF" id="tNJ-yZ-bHS"/>
-                        <segue destination="VcT-bj-uYv" kind="presentation" identifier="LogoutSegue" modalPresentationStyle="fullScreen" id="XI7-6i-309"/>
+                        <segue destination="VcT-bj-uYv" kind="presentation" identifier="LogoutSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="XI7-6i-309"/>
                     </connections>
                 </tableViewController>
             </objects>

@@ -24,11 +24,6 @@ class SettingsTVC: UITableViewController {
     
     // MARK: - IBActions
     
-
-    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
         AlertService.logout(viewController: self, completed: {
             do {

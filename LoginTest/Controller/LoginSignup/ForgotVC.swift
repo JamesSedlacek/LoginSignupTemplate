@@ -19,14 +19,11 @@ class ForgotVC: UIViewController {
         
         Auth.auth().sendPasswordReset(withEmail: email, completion: {
             error in
-            
             if error != nil {
-//                print("Error: \(error)")
-                AlertService.invalidEmail(self)
+                AlertService.showPopup(title: "Error!", message: "Unable to send reset link.\nTry Again", viewController: self)
                 return
             }
-            
-            self.navigationController?.popViewController(animated: true)
+            AlertService.resetPasswordLinkSent(self)
         })
     }
     

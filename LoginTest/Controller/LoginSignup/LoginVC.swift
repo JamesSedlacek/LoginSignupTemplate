@@ -79,7 +79,6 @@ class LoginVC: UIViewController {
               let password = getPassword() else { return }
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
-//                print("Error: \(String(describing: error))")
                 AlertService.showPopup(title: "Login Error!", message: "Incorrect Email or Password.", viewController: self)
             } else {
                 successful()
@@ -102,6 +101,7 @@ class LoginVC: UIViewController {
         initBioButton()
         rememberEmail()
         setupEyeButton()
+        K.Enums.loggedInUsing = .Email
     }
     
     func setupEyeButton() {

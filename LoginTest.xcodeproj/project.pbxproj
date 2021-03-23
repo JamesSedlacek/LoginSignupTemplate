@@ -166,9 +166,9 @@
 		A584E9E725B5140100C2BE75 /* LoginTest */ = {
 			isa = PBXGroup;
 			children = (
-				A545DD8225F93E4A00B2F1E0 /* Media */,
 				A584E9F625B5140100C2BE75 /* Info.plist */,
 				A5B65A1025ED6BCB0081C6C6 /* GoogleService-Info.plist */,
+				A545DD8225F93E4A00B2F1E0 /* Media */,
 				A5B65A0625ED62050081C6C6 /* Helpers */,
 				A5B65A0725ED62170081C6C6 /* Delegate */,
 				A5B65A0925ED623F0081C6C6 /* Model */,

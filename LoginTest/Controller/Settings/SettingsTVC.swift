@@ -10,6 +10,13 @@ import FirebaseAuth
 import FBSDKLoginKit
 import GoogleSignIn
 
+enum SectionNumber: Int {
+    case notifications = 0
+    case contactus = 1
+    case legal = 2
+    case account = 3
+}
+
 class SettingsTVC: UITableViewController {
     
     // MARK: - Variables
@@ -17,14 +24,10 @@ class SettingsTVC: UITableViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var helpButton: UIButton!
-    @IBOutlet weak var passwordButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var deleteButton: UIButton!
     
     // MARK: - IBActions
     
-    @IBAction func logoutButtonTapped(_ sender: UIButton) {
+    func signout() {
         AlertService.logout(viewController: self, completed: {
             do {
                 if K.Enums.loggedInUsing == .Facebook {
@@ -46,7 +49,7 @@ class SettingsTVC: UITableViewController {
         })
     }
     
-    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+    func deleteAccount() {
         AlertService.deleteAccount(viewController: self, completed: {
             Auth.auth().currentUser?.delete(completion: {_ in
                 self.performSegue(withIdentifier: K.Strings.logoutIdentifier, sender: nil)
@@ -58,20 +61,37 @@ class SettingsTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButtons()
-        tableView.tableFooterView = UIView()
-    }
-    
-    func setupButtons() {
-        Styling.styleFilledButton(passwordButton)
-        Styling.styleFilledButton(helpButton)
-        Styling.styleFilledButton(logoutButton)
-        deleteButton.layer.cornerRadius = K.Numbers.buttonCornerRadius
-        
-        if K.Enums.loggedInUsing != .Email {
-            passwordButton.isUserInteractionEnabled = false
-            passwordButton.alpha = K.Numbers.buttonDisabledAlpha
-        }
+
     }
 
+//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let shadowView = UIView()
+//        shadowView.layer.shadowColor = UIColor.black.cgColor
+//        shadowView.layer.shadowRadius = 3.0
+//        shadowView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+//        shadowView.layer.shadowOpacity = 0.5
+//        shadowView.layer.masksToBounds = false
+//        return shadowView
+//    }
+//
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let shadowView = UIView()
+//        shadowView.layer.shadowColor = UIColor.black.cgColor
+//        shadowView.layer.shadowRadius = 3.0
+//        shadowView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+//        shadowView.layer.shadowOpacity = 0.5
+//        shadowView.layer.masksToBounds = false
+//        return shadowView
+//    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == SectionNumber.account.rawValue {
+            if indexPath.row == 2 { //Sign Out
+                signout()
+            } else if indexPath.row == 3 {
+                deleteAccount()
+            }
+        }
+    }
 }

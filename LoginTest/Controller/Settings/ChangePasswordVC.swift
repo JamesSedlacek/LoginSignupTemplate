@@ -108,6 +108,9 @@ class ChangePasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
+        if K.Enums.loggedInUsing != .Email {
+            backButtonTapped(UIBarButtonItem())
+        }
     }
     
     func setupButtons() {
